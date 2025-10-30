@@ -1086,7 +1086,7 @@ end
 
 -- On click, open at the click's y
 function preMousePress(view, event)
-	if view == tree_view then
+	if view == tree_view and event:Position() ~= nil then
 		local x, y = event:Position()
 		-- Fixes the y because softwrap messes with it
 		local new_x, new_y = tree_view:GetMouseClickLocation(x, y)
